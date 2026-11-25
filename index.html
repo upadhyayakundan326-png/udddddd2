@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uddipto Deka | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #09090f;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 9%;
+    background: #09090fee;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #ffffff0c;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #a78bfa;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #a78bfa;
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    background: none;
+    border: none;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10%;
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 600px;
+    animation: slideLeft 1s ease forwards;
+}
+
+.tag {
+    background: #211a35;
+    color: #c4b5fd;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.gradient {
+    background: linear-gradient(90deg,#a78bfa,#ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% auto;
+    animation: gradientMove 4s linear infinite;
+}
+
+.hero p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 8px;
+    background: #8b5cf6;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #7c3aed;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px #8b5cf655;
+}
+
+/* PROFILE IMAGE */
+
+.profile {
+    width: 320px;
+    height: 390px;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 2px solid #8b5cf6;
+    box-shadow: 0 0 60px #8b5cf644;
+    flex-shrink: 0;
+    position: relative;
+    animation: profileEntry 1.4s ease both, profileFloat 4s ease-in-out 1.4s infinite;
+}
+
+.profile::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    box-shadow: inset 0 0 35px #8b5cf633;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+
+    /* Face moves up and down */
+    animation: faceMove 5s ease-in-out infinite alternate;
+    transform-origin: center;
+}
+
+/* ABOUT */
+
+section {
+    padding: 90px 10%;
+}
+
+.heading {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+
+.about {
+    background: #101019;
+    text-align: center;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    color: #aaa;
+    line-height: 1.9;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 18px;
+}
+
+.skill {
+    background: #151520;
+    border: 1px solid #292938;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    transition: .4s;
+}
+
+.skill:hover {
+    transform: translateY(-9px);
+    border-color: #8b5cf6;
+    box-shadow: 0 10px 30px #8b5cf622;
+}
+
+.skill h3 {
+    font-size: 17px;
+    color: #c4b5fd;
+    margin-bottom: 8px;
+}
+
+.skill p {
+    font-size: 12px;
+    color: #888;
+}
+
+/* INTERNSHIP */
+
+.internship {
+    background: #101019;
+}
+
+.intern-card {
+    max-width: 700px;
+    margin: auto;
+    background: #181824;
+    border: 1px solid #353047;
+    padding: 30px;
+    border-radius: 15px;
+    transition: .4s;
+}
+
+.intern-card:hover {
+    border-color: #8b5cf6;
+    transform: translateY(-6px);
+}
+
+.intern-card h3 {
+    color: #c4b5fd;
+    margin-bottom: 12px;
+}
+
+.intern-card p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+.status {
+    color: #4ade80;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 18px;
+}
+
+/* CONTACT */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: #aaa;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #777;
+    border-top: 1px solid #252530;
+    font-size: 13px;
+}
+
+/* ANIMATIONS */
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes profileEntry {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Profile gently moves up and down */
+
+@keyframes profileFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* Photo crop slowly moves from top to bottom */
+
+@keyframes faceMove {
+    0% {
+        object-position: center 15%;
+    }
+
+    100% {
+        object-position: center 45%;
+    }
+}
+
+@keyframes gradientMove {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:800px) {
+
+    nav {
+        padding: 22px 7%;
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 75px;
+        right: 5%;
+        left: 5%;
+        background: #181824;
+        padding: 25px;
+        border: 1px solid #292938;
+        border-radius: 12px;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 65px 7%;
+        min-height: auto;
+    }
+
+    .profile {
+        width: 250px;
+        height: 290px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    section {
+        padding: 70px 7%;
+    }
+}
+
+@media(max-width:400px) {
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .heading {
+        font-size: 29px;
+    }
+
+    h1 {
+        font-size: 39px;
+    }
+
+    .profile {
+        width: 220px;
+        height: 270px;
+    }
+
+    .intern-card {
+        padding: 22px;
+    }
+}
+
+/* Respect reduced motion preference */
+
+@media(prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">UD.</div>
+
+    <ul id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#internship">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="menu" id="menuBtn" aria-label="Toggle menu">
+        ☰
+    </button>
+
+</nav>
+
+
+<!-- HOME -->
+
+<div class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            Frontend Developer | UI/UX Designer
+        </span>
+
+        <h1>
+            Hi, I'm <span class="gradient">Uddipto Deka</span>
+        </h1>
+
+        <p>
+            A passionate Frontend Developer who loves creating
+            modern, responsive and user-friendly websites.
+            Currently aspiring to become a professional UI/UX Designer.
+        </p>
+
+        <a href="#contact" class="btn">
+            Let's Connect →
+        </a>
+
+    </div>
+
+    <div class="profile">
+        <img src="./udipto2.jpeg" alt="Uddipto Deka">
+    </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2 class="heading">
+        About <span class="gradient">Me</span>
+    </h2>
+
+    <p>
+        I am Uddipto Deka, currently pursuing Bachelor of Computer
+        Applications (BCA), 5th Semester at Pragjyotish College.
+        I have a strong interest in Frontend Development,
+        creative web design and user experience.
+        My goal is to become a professional UI/UX Designer
+        and a skilled Frontend Developer.
+    </p>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="heading">
+        My <span class="gradient">Skills</span>
+    </h2>
+
+    <div class="skills-grid">
+
+        <div class="skill">
+            <h3>HTML5</h3>
+            <p>Web Structure</p>
+        </div>
+
+        <div class="skill">
+            <h3>CSS3</h3>
+            <p>Responsive Design</p>
+        </div>
+
+        <div class="skill">
+            <h3>JavaScript</h3>
+            <p>Interactive Websites</p>
+        </div>
+
+        <div class="skill">
+            <h3>React.js</h3>
+            <p>Frontend Development</p>
+        </div>
+
+        <div class="skill">
+            <h3>Next.js</h3>
+            <p>Modern Web Development</p>
+        </div>
+
+        <div class="skill">
+            <h3>Git</h3>
+            <p>Version Control</p>
+        </div>
+
+        <div class="skill">
+            <h3>GitHub</h3>
+            <p>Code Management</p>
+        </div>
+
+        <div class="skill">
+            <h3>Vercel</h3>
+            <p>Website Deployment</p>
+        </div>
+
+        <div class="skill">
+            <h3>Canva</h3>
+            <p>Creative Designing</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTERNSHIP -->
+
+<section class="internship" id="internship">
+
+    <h2 class="heading">
+        My <span class="gradient">Experience</span>
+    </h2>
+
+    <div class="intern-card">
+
+        <h3>Frontend Development Intern</h3>
+
+        <h4>Luit Studio</h4>
+
+        <p>
+            Gaining practical experience in frontend development,
+            responsive website design, HTML, CSS, JavaScript
+            and modern web technologies. Learning to create
+            attractive and user-friendly web interfaces.
+        </p>
+
+        <span class="status">
+            ● Internship Experience
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2 class="heading">
+        Let's <span class="gradient">Connect</span>
+    </h2>
+
+    <p>
+        Have an idea or want to collaborate?
+        Feel free to get in touch with me.
+    </p>
+
+    <a href="mailto:yourmail@gmail.com" class="btn">
+        Contact Me →
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 Uddipto Deka. All Rights Reserved.
+</footer>
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function() {
+
+    const isOpen = navLinks.classList.toggle("show");
+
+    menuBtn.setAttribute("aria-expanded", isOpen);
+
+    menuBtn.innerHTML = isOpen ? "✕" : "☰";
+
+});
+
+document.querySelectorAll("#navLinks a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        navLinks.classList.remove("show");
+
+        menuBtn.setAttribute("aria-expanded", "false");
+
+        menuBtn.innerHTML = "☰";
+
+    });
+
+});
+
+document.addEventListener("click", function(event) {
+
+    if (
+        !menuBtn.contains(event.target) &&
+        !navLinks.contains(event.target)
+    ) {
+
+        navLinks.classList.remove("show");
+
+        menuBtn.setAttribute("aria-expanded", "false");
+
+        menuBtn.innerHTML = "☰";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
